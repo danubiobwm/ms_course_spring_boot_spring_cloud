@@ -11,7 +11,7 @@ public class Worker implements Serializable {
 	private Double dailyIncome;
 
 
-	public Worker() {}
+  public Worker() {}
 
 	public Worker(Long id, String name, Double dailyIncome) {
 		super();
@@ -19,6 +19,11 @@ public class Worker implements Serializable {
 		this.name = name;
 		this.dailyIncome = dailyIncome;
 	}
+
+		public Worker(String name, Double dailyIncome) {
+    this.name = name;
+    this.dailyIncome = dailyIncome;
+}
 
 
 
