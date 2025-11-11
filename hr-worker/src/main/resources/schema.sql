@@ -1,0 +1,5 @@
+CREATE TABLE worker (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    daily_income DECIMAL(10,2) NOT NULL
+);

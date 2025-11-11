@@ -6,9 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class HrApiGatewayZuulApplication {
+public class HrApiGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HrApiGatewayZuulApplication.class, args);
+        SpringApplication.run(HrApiGatewayApplication.class, args);
     }
 }
