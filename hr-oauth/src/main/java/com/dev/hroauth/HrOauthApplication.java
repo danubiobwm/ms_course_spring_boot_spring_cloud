@@ -1,13 +1,13 @@
-package com.dev.hrouth;
+package com.dev.hroauth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HrOuthApplication {
+public class HrOauthApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HrOuthApplication.class, args);
+		SpringApplication.run(HrOauthApplication.class, args);
 	}
 
 }

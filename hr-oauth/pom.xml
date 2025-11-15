@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dev</groupId>
-	<artifactId>hr-outh</artifactId>
+	<artifactId>hr-oauth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hr-outh</name>
+	<name>hr-oauth</name>
 	<description>Authorization Server - Spring Boot</description>
 	<url/>
 	<licenses>
