@@ -1,29 +1,25 @@
-package com.dev.hruser.entities;
+package com.dev.hroauth.entities;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "tb_role")
+
+
 public class Role implements Serializable {
+
   private static final long serialVersionUID = 1L;
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String roleName;
 
   public Role() {
   }
 
+
   public Role(Long id, String roleName) {
     this.id = id;
     this.roleName = roleName;
   }
+
 
   public Long getId() {
     return id;
@@ -41,6 +37,7 @@ public class Role implements Serializable {
     this.roleName = roleName;
   }
 
+
   @Override
   public int hashCode() {
     final int prime = 31;
@@ -48,6 +45,7 @@ public class Role implements Serializable {
     result = prime * result + ((roleName == null) ? 0 : roleName.hashCode());
     return result;
   }
+
 
   @Override
   public boolean equals(Object obj) {
@@ -65,5 +63,7 @@ public class Role implements Serializable {
       return false;
     return true;
   }
+
+
 
 }
