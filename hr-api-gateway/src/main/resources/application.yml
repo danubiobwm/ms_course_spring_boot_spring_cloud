@@ -1,0 +1,31 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: hr-oauth
+          uri: lb://hr-oauth
+          predicates:
+            - Path=/hr-oauth/**
+          filters:
+            - RewritePath=/hr-oauth/(?<segment>.*), /$\{segment}
+
+        - id: hr-user
+          uri: lb://hr-user
+          predicates:
+            - Path=/hr-user/**
+          filters:
+            - RewritePath=/hr-user/(?<segment>.*), /$\{segment}
+
+        - id: hr-worker
+          uri: lb://hr-worker
+          predicates:
+            - Path=/hr-worker/**
+          filters:
+            - RewritePath=/hr-worker/(?<segment>.*), /$\{segment}
+
+        - id: hr-payroll
+          uri: lb://hr-payroll
+          predicates:
+            - Path=/hr-payroll/**
+          filters:
+            - RewritePath=/hr-payroll/(?<segment>.*), /$\{segment}
