@@ -37,7 +37,7 @@ public class AuthorizationServerConfig {
             .exceptionHandling(exceptions -> exceptions
                 .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"))
             )
-            .csrf(csrf -> csrf.ignoringRequestMatchers("/oauth2/**")); // CORREÇÃO: Desabilita CSRF para OAuth2
+            .csrf(csrf -> csrf.ignoringRequestMatchers("/oauth2/**"));
 
         return http.build();
     }
@@ -49,19 +49,19 @@ public class AuthorizationServerConfig {
 
     @Bean
     public RegisteredClientRepository registeredClientRepository(PasswordEncoder passwordEncoder) {
-        // CORREÇÃO: Gera a senha codificada corretamente
+
         String encodedSecret = passwordEncoder.encode("myappsecret123");
 
         RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 .clientId("myappname123")
-                .clientSecret(encodedSecret) // CORREÇÃO: Usa a senha codificada
+                .clientSecret(encodedSecret)
                 .clientAuthenticationMethod(org.springframework.security.oauth2.core.ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(org.springframework.security.oauth2.core.AuthorizationGrantType.PASSWORD)
                 .authorizationGrantType(org.springframework.security.oauth2.core.AuthorizationGrantType.REFRESH_TOKEN)
                 .scope("read")
                 .scope("write")
                 .tokenSettings(TokenSettings.builder()
-                    .accessTokenTimeToLive(Duration.ofSeconds(86400)) // 24 horas
+                    .accessTokenTimeToLive(Duration.ofSeconds(86400))
                     .refreshTokenTimeToLive(Duration.ofDays(7))
                     .build())
                 .clientSettings(ClientSettings.builder()
